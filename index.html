@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable Resume By Yashwa Carrow</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Editable Resume By Yashwa Carrow</h1>
+    </header>
+
+    <section class="form-section">
+        <form id="resumeForm">
+            <h2>Personal Information</h2>
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="location" placeholder="Location" required>
+            <input type="date" id="dob" required>
+
+            <h2>Objective</h2>
+            <textarea id="objective" placeholder="Your career objective"></textarea>
+
+            <h2>Education</h2>
+            <div id="educationFields">
+                <div class="education-entry">
+                    <input type="text" placeholder="Degree" class="degree" required>
+                    <input type="text" placeholder="Institute" class="institute" required>
+                    <input type="text" placeholder="Year" class="year" required>
+                </div>
+            </div>
+            <button type="button" id="addEducation">Add Another Degree</button>
+
+            <h2>Hobbies</h2>
+            <input type="text" id="hobbies" placeholder="Your hobbies">
+
+            <h2>Skills</h2>
+            <input type="text" id="skills" placeholder="Your skills">
+
+            <!-- Generating Resume Button at the End -->
+            <button type="button" id="generateResume">Generate Resume</button>
+        </form>
+    </section>
+
+    <!-- Resume section is placed directly after the form -->
+    <section id="resumeSection" class="resume hidden">
+        <div class="resume-content">
+            <h2 id="resumeName" contenteditable="true">[Your Name]</h2>
+            <p id="resumeEmail" contenteditable="true">[Email]</p>
+            <p id="resumeLocation" contenteditable="true">[Location]</p>
+            <p id="resumeDOB" contenteditable="true">[Date of Birth]</p>
+            <h3>Objective</h3>
+            <p id="resumeObjective" contenteditable="true">[Career Objective]</p>
+
+            <h3>Education</h3>
+            <div id="resumeEducation"></div>
+
+            <h3>Hobbies</h3>
+            <p id="resumeHobbies" contenteditable="true">[Hobbies]</p>
+
+            <h3>Skills</h3>
+            <p id="resumeSkills" contenteditable="true">[Skills]</p>
+        </div>
+    </section>
+
+    <footer>
+        Made by Yashwa Carrow
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

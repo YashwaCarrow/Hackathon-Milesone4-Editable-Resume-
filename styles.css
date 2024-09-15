@@ -1,0 +1,176 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    background-color: #0d0d0d;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Ensuring the main container takes up the full viewport */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    padding: 20px;
+    background: linear-gradient(90deg, #ff00cc, #3333ff);
+    text-align: center;
+    animation: glow 3s infinite;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: white;
+}
+
+/* Main content area that take's up remaining space to push footer down */
+.main-content {
+    flex: 1;
+    padding-bottom: 100px; /* Adding space so footer doesn't overlap */
+}
+
+/* Form Section Styles */
+.form-section {
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: left;
+}
+
+.form-section h2 {
+    margin-bottom: 10px;
+    color: #ff00cc;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #ff00cc;
+    padding-bottom: 5px;
+}
+
+input, textarea, button {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 100%;
+    background-color: #1c1c1c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+button {
+    background: linear-gradient(90deg, #ff00cc, #3333ff);
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #3333ff, #ff00cc);
+}
+
+/* Education Fields */
+.education-entry {
+    display: flex;
+    flex-direction: column;
+}
+
+#addEducation {
+    margin-top: 10px;
+}
+
+/* Resume Section Styles */
+.resume {
+    padding: 20px;
+    background: #1c1c1c;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 800px;
+    text-align: left;
+    animation: fade-in 1s ease-out;
+}
+
+.resume.hidden {
+    display: none;
+}
+
+.resume-content h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+.resume-content p, .resume-content h3 {
+    padding: 5px 0;
+}
+
+.resume-content h3 {
+    color: #ff00cc;
+    border-bottom: 1px solid #ff00cc;
+    padding-bottom: 5px;
+    margin-top: 15px;
+}
+
+/* Footer should always be at the bottom */
+footer {
+    padding: 20px;
+    background: linear-gradient(90deg, #ff00cc, #3333ff);
+    color: white;
+    animation: glow 2s infinite;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+    bottom: 0;
+}
+
+/* Animations */
+@keyframes glow {
+    0% { box-shadow: 0 0 10px #ff00cc; }
+    50% { box-shadow: 0 0 20px #3333ff; }
+    100% { box-shadow: 0 0 10px #ff00cc; }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .resume-content h2 {
+        font-size: 1.5rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
